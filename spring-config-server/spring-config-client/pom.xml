@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.sejoung.spring.cloud</groupId>
-	<artifactId>configclient</artifactId>
+	<artifactId>spring.config.suite.client</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1</version>
 	<name>spring-config-client</name>
