@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.sejoung.spring.cloud</groupId>
+	<artifactId>spring.eureka.suite</artifactId>
+	<name>spring-eureka-server</name>
+	<packaging>pom</packaging>
+	<version>0.1</version>
+	<description>spring cloud eureka server client sample code</description>
+	<url>https://github.com/sejoung/spring-cloud-sample</url>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Sejoung Kim</name>
+			<email>sejoung@gmail.com</email>
+		</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	<modules>
+		<module>spring-eureka-client</module>
+		<module>spring-eureka-server</module>
+	</modules>
+	
+</project>
