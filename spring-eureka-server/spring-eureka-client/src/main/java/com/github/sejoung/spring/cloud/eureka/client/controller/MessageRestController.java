@@ -13,7 +13,7 @@ public class MessageRestController {
 	@Value("${config.name}")
 	String name = "World";
 
-	@RequestMapping("/")
+	@RequestMapping("/message")
 	public String home() {
 		return "Hello " + name;
 	}
