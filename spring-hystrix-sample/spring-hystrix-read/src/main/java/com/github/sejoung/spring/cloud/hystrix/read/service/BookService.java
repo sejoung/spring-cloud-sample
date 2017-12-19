@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 @RefreshScope
 @Service
@@ -22,7 +23,18 @@ public class BookService {
 		return restTemplate.getForObject(url, String.class);
 	}
 
-	@HystrixCommand(fallbackMethod = "reliable")
+	@HystrixCommand(fallbackMethod = "reliable", 
+			commandProperties = { 
+					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "500")
+					}, 
+			threadPoolProperties = { 
+					@HystrixProperty(name = "coreSize", value = "30"), 
+					@HystrixProperty(name = "maxQueueSize", value = "101"), 
+					@HystrixProperty(name = "keepAliveTimeMinutes", value = "2"), 
+					@HystrixProperty(name = "queueSizeRejectionThreshold", value = "15"), 
+					@HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12"), 
+					@HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1440") 
+					})
 	public String hystrixReadingList() {
 		return restTemplate.getForObject(url, String.class);
 	}
